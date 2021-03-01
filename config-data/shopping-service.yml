@@ -1,0 +1,29 @@
+#Application Configuration
+server:
+  port: 8093
+
+
+spring:
+  #==============================
+  #DB
+  #==============================
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: admin
+    url: jdbc:mysql://localhost/db_ventas?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+   
+  #==============================
+  #JPA/HIBERNATE
+  #============================== 
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: true
+    
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
